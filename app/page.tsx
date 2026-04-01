@@ -1,5 +1,5 @@
 import { cookies, headers } from "next/headers";
-import HomePageClient from "./home-page-client";
+import HomePageLoader from "./home-page-loader";
 import { DEFAULT_LOCALE, LOCALE_COOKIE_NAME, normalizeLocale } from "@/lib/i18n";
 
 function normalizeCountryCode(value: string | null): string | null {
@@ -34,7 +34,7 @@ export default async function Page() {
   const detectedLocation = headerStore.get("x-detected-location") ?? null;
 
   return (
-    <HomePageClient
+    <HomePageLoader
       locale={locale}
       detectedCountryCode={detectedCountryCode}
       detectedCallingCode={detectedCallingCode}

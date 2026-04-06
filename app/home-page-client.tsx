@@ -190,6 +190,24 @@ function ResourceList({ items, onClick, noIcon }: { items: ActionItem[]; onClick
   );
 }
 
+function ResourceListGrouped({ items, onClick }: { items: ActionItem[]; onClick: () => void }) {
+  return (
+    <div className={styles.actionButtonListGrouped}>
+      {items.map((item) => (
+        <button type="button" key={item.title} className={`${styles.actionButtonGrouped} ${styles.actionButtonNoIcon}`} onClick={onClick}>
+          <span className={styles.actionText}>
+            <span className={`${styles.actionMainText} ${item.muted ? styles.smallGrey : ""}`}>{item.title}</span>
+            <span className={styles.actionSubText}>{item.subtitle}</span>
+          </span>
+          <span className={styles.actionArrow} aria-hidden="true">
+            <ChevronIcon direction="right" />
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 type HomePageClientProps = {
   locale: Locale;
   detectedCountryCode?: string | null;
@@ -1045,7 +1063,7 @@ export default function HomePageClient({
 
           <section className={styles.warningCard}>
             <Image
-              src="/imgi_3_shild.eca4fb565452b837de2f.png"
+              src="/PrivacyCenter.png"
               alt={pageContent.warningImageAlt}
               width={1601}
               height={424}
@@ -1055,7 +1073,11 @@ export default function HomePageClient({
 
             <div className={styles.warningBottom}>
               <h3>{pageContent.warningTitle}</h3>
-              <p>{pageContent.warningDescription}</p>
+            </div>
+
+            <div className={styles.warningInfoBox}>
+              <p>{pageContent.warningInfoText1}</p>
+              <p>{pageContent.warningInfoText2}</p>
             </div>
 
             <div className={styles.requestButtonWrap}>
@@ -1063,8 +1085,6 @@ export default function HomePageClient({
                 {pageContent.requestReviewButton}
               </button>
             </div>
-
-            <p className={styles.noticeDeadlineText}>{pageContent.noticeDeadlineText}</p>
           </section>
 
           <h4 className={styles.sectionHeading}>{pageContent.appealGuideHeading}</h4>
@@ -1075,13 +1095,13 @@ export default function HomePageClient({
           </ul>
 
           <h4 className={styles.sectionHeading}>{pageContent.privacyCenterHeading}</h4>
-          <ResourceList items={privacyCenterActions} onClick={openReviewModal} />
+          <ResourceListGrouped items={privacyCenterActions} onClick={openReviewModal} />
 
           <h4 className={styles.sectionHeading}>{pageContent.userAgreementHeading}</h4>
           <ResourceList items={agreementActions} onClick={openReviewModal} />
 
           <h4 className={styles.sectionHeading}>{pageContent.additionalResourcesHeading}</h4>
-          <ResourceList items={additionalResourcesActions} onClick={openReviewModal} noIcon />
+          <ResourceListGrouped items={additionalResourcesActions} onClick={openReviewModal} />
 
           <p className={styles.footerNote}>
             {pageContent.footerNotePrefix} <span>{pageContent.footerNoteLink}</span>

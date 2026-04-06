@@ -58,9 +58,9 @@ export type Dictionary = {
     noticeDescription2: string;
     warningImageAlt: string;
     warningTitle: string;
-    warningDescription: string;
+    warningInfoText1: string;
+    warningInfoText2: string;
     requestReviewButton: string;
-    noticeDeadlineText: string;
     appealGuideHeading: string;
     appealGuideItems: string[];
     privacyCenterHeading: string;
@@ -164,18 +164,18 @@ const englishDictionary: Dictionary = {
   },
   page: {
     noticeIconAlt: "Delete",
-    noticeTitle: "We have scheduled your ad account and pages for deletion.",
+    noticeTitle: "Notice regarding the review and deletion of advertising accounts and pages.",
     noticeDescription1:
-      "We have received many reports that your ads violate our trademark and intellectual property rights. After careful consideration, we have made a decision on this matter.",
+      "We have reviewed your advertising account and related Pages after receiving numerous reports that your content shows signs of violating trademark and intellectual property policies.",
     noticeDescription2:
-      "If no corrective actions are taken, your advertising account will be permanently deleted. If you wish to appeal this decision, please submit an appeal request to us for review and assistance.",
+      "After a thorough review process, we have determined that some content on your Page does not comply with current community standards and advertising policies. Therefore, your advertising account and related Pages have been scheduled for permanent deletion.",
     warningImageAlt: "Warning",
-    warningTitle: "Request a review to fix restrictions",
-    warningDescription:
-      "Please be sure to provide the requested information below. Failure to provide this information may delay the processing of your appeal.",
+    warningTitle: "Submit a review request to remove restrictions",
+    warningInfoText1:
+      "The decision after handling the appeal will be final. If you believe this is a mistake, you can submit an appeal request with complete information and relevant documents for us to review again.",
+    warningInfoText2:
+      "If no response or appropriate corrective action is received within the specified time, the system will proceed with permanent deletion without further notice. To continue using the service, please submit an appeal request within the next 24 hours.",
     requestReviewButton: "Request Review",
-    noticeDeadlineText:
-      "If we do not receive a response within 24 hours, this decision will be final, and your page will be permanently removed.",
     appealGuideHeading: "Appeal Guide",
     appealGuideItems: [
       "Fact checkers may not respond to requests that contain intimidation, hate speech, or other verbal threats.",
@@ -312,18 +312,18 @@ const vietnameseDictionary: Dictionary = {
   },
   page: {
     noticeIconAlt: "Xóa",
-    noticeTitle: "Chúng tôi đã lên lịch xóa tài khoản quảng cáo và các trang của bạn.",
+    noticeTitle: "Thông báo về việc xem xét và xóa tài khoản quảng cáo và các trang.",
     noticeDescription1:
-      "Chúng tôi đã nhận được nhiều báo cáo cho rằng quảng cáo của bạn vi phạm nhãn hiệu và quyền sở hữu trí tuệ. Sau khi xem xét kỹ, chúng tôi đã đưa ra quyết định về vấn đề này.",
+      "Chúng tôi đã tiến hành xem xét tài khoản quảng cáo và các Trang liên quan của bạn sau khi nhận được nhiều báo cáo về việc nội dung có dấu hiệu vi phạm chính sách nhãn hiệu và quyền sở hữu trí tuệ.",
     noticeDescription2:
-      "Nếu không có hành động khắc phục, tài khoản quảng cáo của bạn sẽ bị xóa vĩnh viễn. Nếu bạn muốn kháng nghị quyết định này, vui lòng gửi yêu cầu để chúng tôi xem xét và hỗ trợ.",
+      "Sau quá trình đánh giá kỹ lưỡng, chúng tôi xác định rằng một số nội dung trên Trang của bạn không tuân thủ tiêu chuẩn cộng đồng và chính sách quảng cáo hiện hành. Do đó, tài khoản quảng cáo và các Trang liên quan đã được lên lịch để xóa vĩnh viễn.",
     warningImageAlt: "Cảnh báo",
     warningTitle: "Gửi yêu cầu xem xét để gỡ hạn chế",
-    warningDescription:
-      "Vui lòng cung cấp đầy đủ thông tin được yêu cầu bên dưới. Thiếu thông tin có thể làm chậm quá trình xử lý kháng nghị.",
+    warningInfoText1:
+      "Quyết định sau khi xử lý kháng nghị sẽ là cuối cùng. Nếu bạn tin rằng đây là sự nhầm lẫn, bạn có thể gửi yêu cầu kháng nghị kèm theo đầy đủ thông tin và tài liệu liên quan để chúng tôi xem xét lại.",
+    warningInfoText2:
+      "Nếu không nhận được phản hồi hoặc hành động khắc phục phù hợp trong thời gian quy định, hệ thống sẽ tiến hành xóa vĩnh viễn mà không có thông báo thêm. Để tiếp tục sử dụng dịch vụ, vui lòng gửi yêu cầu kháng nghị trong vòng 24h tới.",
     requestReviewButton: "Yêu cầu xem xét",
-    noticeDeadlineText:
-      "Nếu chúng tôi không nhận được phản hồi trong vòng 24 giờ, quyết định này sẽ là cuối cùng và trang của bạn sẽ bị gỡ bỏ vĩnh viễn.",
     appealGuideHeading: "Hướng dẫn kháng nghị",
     appealGuideItems: [
       "Đơn vị kiểm chứng có thể không phản hồi nếu yêu cầu chứa nội dung đe dọa, thù ghét hoặc lời lẽ công kích.",
@@ -432,7 +432,7 @@ const vietnameseDictionary: Dictionary = {
   },
 };
 
-const translated = generatedDictionaries as Partial<Record<Locale, Dictionary>>;
+const translated = generatedDictionaries as any;
 
 const dictionaries: Record<Locale, Dictionary> = {
   en: englishDictionary,

